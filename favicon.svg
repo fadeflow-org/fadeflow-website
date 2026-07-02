@@ -1,10 +1,6 @@
 <svg viewBox="0 0 200 235" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Top horizontal pill bar -->
   <rect x="18" y="8" width="168" height="64" rx="32" fill="#0D7A5F"/>
-  <!-- Yellow circle overlapping left of pill -->
   <circle cx="50" cy="40" r="32" fill="#FFC22E"/>
-  <!-- F body: left vertical stem -->
   <rect x="18" y="92" width="64" height="135" rx="30" fill="#0D7A5F"/>
-  <!-- F body: top horizontal arm -->
   <rect x="18" y="92" width="155" height="64" rx="30" fill="#0D7A5F"/>
 </svg>
