@@ -86,16 +86,6 @@ if (progressFill) {
   progressObserver.observe(progressFill);
 }
 
-// ---- Pricing card urgency counter ----
-// Show live "spots remaining" feel
-const pricingCard = document.querySelector('.pricing-card');
-if (pricingCard) {
-  const spotsEl = document.createElement('p');
-  spotsEl.style.cssText = 'text-align:center;font-size:0.78rem;color:#6B7280;margin-top:10px;';
-  // Static display — update as real customers sign up
-  spotsEl.innerHTML = '🟡 <strong style="color:#1A1A1A;">Spots are limited.</strong> Founder pricing ends after 20 sign-ups.';
-  pricingCard.appendChild(spotsEl);
-}
 
 // ---- Stat counter animation ----
 function animateCounter(el, target, prefix = '', suffix = '') {

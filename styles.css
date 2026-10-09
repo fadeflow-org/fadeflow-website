@@ -561,6 +561,97 @@ img { max-width: 100%; display: block; }
 .pv-step:not(.active) .pv-step-status { background: var(--border); color: var(--text-muted); }
 
 /* ================================================
+   PRODUCTS SECTION
+   ================================================ */
+.products-section {
+  padding: 120px 0 40px;
+  background: white;
+}
+.products-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 16px auto 0;
+  line-height: 1.6;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.product-card { display: flex; flex-direction: column; }
+.product-card .product-points { flex: 1; align-content: start; }
+.product-card-wide { grid-column: 1 / -1; }
+.ai-steps {
+  list-style: none;
+  counter-reset: ai-step;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ai-steps li {
+  counter-increment: ai-step;
+  background: var(--bg-alt);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.ai-steps li::before {
+  content: counter(ai-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ai-steps li strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.product-points {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.product-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.product-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.45em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.product-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--green);
+}
+.product-link:hover { text-decoration: underline; }
+
+/* ================================================
    FEATURES SECTION
    ================================================ */
 .features-section {
@@ -1028,6 +1119,9 @@ img { max-width: 100%; display: block; }
 
   /* Features */
   .features-grid { grid-template-columns: 1fr; gap: 12px; }
+  .products-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ai-steps { grid-template-columns: 1fr; gap: 10px; }
+  .products-section { padding: 50px 0 20px; }
   .feature-card { padding: 24px 20px; }
 
   /* Who it's for */
