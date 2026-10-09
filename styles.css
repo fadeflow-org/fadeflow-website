@@ -1177,3 +1177,167 @@ img { max-width: 100%; display: block; }
   .final-cta { padding: 50px 0; }
 }
 
+
+/* ================================================
+   CLIENTS
+   ================================================ */
+.clients-section {
+  padding: 56px 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.clients-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.clients-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.client-tile {
+  height: 104px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  overflow: hidden;
+}
+.client-tile img { max-height: 70px; max-width: 100%; object-fit: contain; }
+.client-tile-dark { background: #7B1FA2; padding: 0; }
+.client-tile-dark img { max-height: 100%; height: 100%; width: 100%; object-fit: cover; }
+.client-tile-confidential {
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-alt);
+  border-style: dashed;
+}
+.client-tile-confidential span { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.client-tile-confidential small { font-size: 0.75rem; color: var(--text-muted); }
+.clients-more { margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); }
+
+/* ---- AI section extras ---- */
+#ai .features-grid { margin-top: 0; }
+.ai-more { text-align: center; margin-top: 36px; font-size: 0.92rem; color: var(--text-muted); }
+.ai-more a { color: var(--green); font-weight: 700; }
+.ai-more a:hover { text-decoration: underline; }
+#product-ai .ai-steps { grid-template-columns: 1fr; gap: 8px; }
+#product-ai .ai-steps li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+  padding: 10px 14px;
+}
+#product-ai .ai-steps li::before { grid-row: span 2; margin-bottom: 0; }
+#product-ai .ai-steps li strong { margin-bottom: 0; }
+.nav-links a { white-space: nowrap; }
+.btn-ghost-nav { white-space: nowrap; }
+@media (max-width: 1180px) { .nav-actions .btn-ghost-nav { display: none; } }
+
+/* ================================================
+   PRICING PLANS
+   ================================================ */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: left;
+}
+.plan-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+.plan-card-featured {
+  border: 2px solid var(--green);
+  box-shadow: 0 0 0 6px rgba(13,122,95,0.07), var(--shadow-xl);
+}
+.plan-tag {
+  align-self: flex-start;
+  background: var(--yellow);
+  color: #1A1A1A;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+.plan-tag-alt { background: var(--green-light); color: var(--green); }
+.plan-name { font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 16px; }
+.plan-from { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+.plan-price-text { font-size: 2.2rem; }
+.plan-note { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 8px 0 24px; }
+.plan-card .pricing-features { flex: 1; margin-bottom: 28px; }
+.plan-card .pricing-feature { align-items: flex-start; font-size: 0.88rem; }
+.plan-cta { width: 100%; justify-content: center; }
+
+/* ================================================
+   TEAM
+   ================================================ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.team-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.team-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.team-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--bg-alt); }
+.team-info { padding: 20px 22px 24px; }
+.team-name { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+.team-role { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+.team-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.team-link:hover { text-decoration: underline; }
+
+.nav-links a.active { color: var(--green); }
+.footer-links-grid { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .clients-row { grid-template-columns: repeat(2, 1fr); }
+  .plans-grid { grid-template-columns: 1fr; max-width: 520px; }
+}
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+  .plan-card { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .clients-row { gap: 10px; }
+  .client-tile { height: 88px; }
+  .footer-links-grid { grid-template-columns: 1fr; }
+}
+
+.plan-card .pricing-amount { justify-content: flex-start !important; }
+.plan-card .plan-cta { max-width: none !important; width: 100% !important; }
+.client-tile-fill { padding: 0; }
+.client-tile-fill img { max-height: 100%; height: 100%; width: 100%; object-fit: cover; }
