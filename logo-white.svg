@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="385 297 423 475" role="img" aria-label="FadeFlow logo">
+  <g fill="#F5F2EA">
+    <rect x="390" y="297" width="418" height="147" rx="73.5"/>
+    <path d="M456 469H638C678 469 710 499 710 536S678 604 638 604H535V696C535 738 502 772 460 772S385 738 385 696V540C385 501 416 469 456 469Z"/>
+  </g>
+  <circle cx="463.5" cy="371" r="61.5" fill="#FFC533"/>
+</svg>

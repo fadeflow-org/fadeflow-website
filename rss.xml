@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FadeFlow Blog</title>
+    <link>https://fadeflow.in/blog/</link>
+    <atom:link href="https://fadeflow.in/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Guides on AI workflow automation, sales, invoicing and logistics operations for SMEs in the UAE &amp; India.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Nov 2026 09:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How SMEs Can Automate Invoicing with AI (Without New Software)</title>
+      <link>https://fadeflow.in/blog/ai-invoice-automation-for-smes.html</link>
+      <guid isPermaLink="true">https://fadeflow.in/blog/ai-invoice-automation-for-smes.html</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0000</pubDate>
+      <category>AI Automation</category>
+      <description>How UAE and India SMEs can use AI to create invoices from job cards, timesheets and delivery notes, and chase payments, using the tools they already have.</description>
+    </item>
+    <item>
+      <title>WhatsApp Lead Qualification with AI: A Practical Guide for SMEs</title>
+      <link>https://fadeflow.in/blog/whatsapp-lead-qualification-with-ai.html</link>
+      <guid isPermaLink="true">https://fadeflow.in/blog/whatsapp-lead-qualification-with-ai.html</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0000</pubDate>
+      <category>Sales</category>
+      <description>Most SME enquiries in the UAE and India arrive on WhatsApp. How AI can reply instantly, qualify leads and pass only serious buyers to your sales team.</description>
+    </item>
+    <item>
+      <title>Logistics Job Cards: Why Excel Breaks and What to Use Instead</title>
+      <link>https://fadeflow.in/blog/logistics-job-cards-excel-vs-software.html</link>
+      <guid isPermaLink="true">https://fadeflow.in/blog/logistics-job-cards-excel-vs-software.html</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0000</pubDate>
+      <category>Logistics</category>
+      <description>Running logistics jobs on Excel and WhatsApp works until it doesn&#x27;t. Where spreadsheets fail, and what a job card system like FadeLogistics changes.</description>
+    </item>
+    <item>
+      <title>9 Repetitive Tasks Every SME Can Automate with AI</title>
+      <link>https://fadeflow.in/blog/repetitive-tasks-smes-can-automate.html</link>
+      <guid isPermaLink="true">https://fadeflow.in/blog/repetitive-tasks-smes-can-automate.html</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0000</pubDate>
+      <category>AI Automation</category>
+      <description>From invoices and quotations to WhatsApp enquiries and daily reports: nine everyday tasks small and medium businesses in the UAE and India can hand to AI first.</description>
+    </item>
+    <item>
+      <title>AI Automation Without Replacing Your Systems: How It Works</title>
+      <link>https://fadeflow.in/blog/ai-automation-without-replacing-systems.html</link>
+      <guid isPermaLink="true">https://fadeflow.in/blog/ai-automation-without-replacing-systems.html</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0000</pubDate>
+      <category>Strategy</category>
+      <description>You don&#x27;t need new software to benefit from AI. How FadeFlow automates work around the email, WhatsApp, spreadsheets and apps your team already uses.</description>
+    </item>
+  </channel>
+</rss>

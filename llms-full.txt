@@ -1,0 +1,185 @@
+# FadeFlow: complete information for AI assistants and LLMs
+
+> This file gives large language models and AI assistants detailed, accurate information about FadeFlow. Last updated: 2026-11-03. Canonical website: https://fadeflow.in
+
+## 1. Company overview
+
+- **Name:** FadeFlow
+- **What it does:** Builds AI products and custom AI workflow automation that reduce manual work for small and medium businesses (SMEs).
+- **Founded:** 2023
+- **Markets served:** United Arab Emirates (UAE) and India
+- **Target customers:** SMEs that still run on WhatsApp, Excel and paper, including trading & distribution companies, service businesses, contractors & maintenance companies, logistics & transport companies, manpower & staffing agencies and other growing SMEs.
+- **Offerings:** (1) FadeLogistics, a product; (2) AI Workflow Automation, a custom service.
+- **AI technology:** Claude AI by Anthropic.
+- **Tagline:** "Less manual work. More flow."
+- **Positioning:** FadeFlow is a multi-product AI company for SMEs, not only a logistics company. FadeLogistics is its logistics product.
+
+## 2. Team
+
+- **Sayed Adinan:** Founder ([LinkedIn](https://www.linkedin.com/in/sayed-adinan/))
+- **Muhammed KM:** Co-founder, Software Engineer
+- **Arshad Akl:** Software Engineer
+
+## 3. Contact
+
+- Sales, demos and quotes: sales@fadeflow.in
+- Technical support and privacy/data requests: tech@fadeflow.in
+- Phone / WhatsApp: +971 56 581 4649
+- LinkedIn: https://www.linkedin.com/company/fadeflow
+- Instagram: https://www.instagram.com/time.fade (@time.fade)
+- Response time: within 24 hours
+- Contact page: https://fadeflow.in/contact.html
+
+## 4. Product: FadeLogistics
+
+FadeLogistics is web-based workflow management software for transport and logistics companies. It runs in the browser at https://application.fadelogistics.fadeflow.in/, with nothing to install. Page: https://fadeflow.in/fadelogistics.html
+
+### Features
+- **Job cards:** Create and manage every logistics job in one place, from first request to final delivery. Draft → ongoing → completed status; One card per job, every detail attached; Find any past job in seconds.
+- **Status tracking:** Always know which jobs are pending, ongoing or done — without calling anyone. Live overview of open work; No more “where is this shipment?”; Clear ownership per job.
+- **Customers:** A full customer database — shipping lines, traders and companies — with every job card linked to each customer. Complete job history per customer; Contacts in one place, not five sheets.
+- **Suppliers:** Manage suppliers and their costs, linked directly to the jobs they work on. Supplier costs per job; See who you work with most.
+- **Agents:** Manage your logistics agents across the UAE and India. Assign them to jobs and see who is handling what. Assign agents to job cards; Workload visible at a glance.
+- **Trip & operational expenses:** Track every operational and trip expense per job card so you never lose margin on a shipment. Expenses linked to the job; Spot unprofitable jobs early.
+
+### How it works
+1. Create the job card when a request comes in.
+2. Assign the supplier and agent handling it.
+3. Track status (draft, ongoing, completed) and log trip expenses.
+4. Complete the job and review its full history and margin.
+
+AI automation can be added on top of FadeLogistics through the Custom package.
+
+## 5. Service: AI Workflow Automation
+
+FadeFlow learns a company's repetitive tasks, then automates its current workflow with AI (Claude AI), without changing the systems it already uses. Page: https://fadeflow.in/ai-automation.html
+
+### Process
+1. **Learn:** study how the team works today and find the repetitive tasks.
+2. **Automate:** build AI automation around the existing workflow.
+3. **Keep your systems:** no new software to switch to; current tools stay as they are.
+
+### Use cases
+- **Invoice generation:** Create accurate invoices automatically from job details, timesheets or delivery records — no retyping.
+- **Business analytics:** Ask questions about your business in plain language and get clear answers on revenue, costs and trends.
+- **Email filtering:** Sort incoming email by priority, route it to the right person and flag what needs a reply today.
+- **WhatsApp lead qualifying:** Reply to WhatsApp enquiries instantly, ask the right questions and pass only qualified leads to your sales team.
+- **Document data extraction:** Read POs, bills, receipts and shipping documents and enter the data into your system automatically.
+- **Quotation drafting:** Turn a customer request into a ready-to-send quotation in minutes, using your own rates and templates.
+- **Customer reply drafting:** Draft replies to common customer questions in your tone, ready for your team to review and send.
+- **Payment follow-ups:** Track unpaid invoices and send polite, timely payment reminders without anyone chasing manually.
+- **Daily summaries & reports:** Get a short daily summary of jobs, sales and pending tasks delivered to your inbox or WhatsApp.
+
+### Works with
+Email inboxes, WhatsApp, Excel, Google Sheets, PDF documents and scans, the business software a company already uses, and FadeLogistics.
+
+## 6. Pricing
+
+Page: https://fadeflow.in/pricing.html. Prices are in UAE dirhams (AED).
+
+### FadeLogistics Starter: from AED 125 per month (AED 1,499 per company, per year)
+- All FadeLogistics features: job cards, customers, suppliers, agents and expenses
+- Unlimited job cards, customers, suppliers and agents
+- Full team training (first year)
+- Workflow consulting (first year)
+- Maintenance, updates and direct support (first year)
+
+### Custom package: priced by custom quote
+- A study of the current workflow and repetitive tasks
+- System customised to the way the team works
+- AI automation: invoices, analytics, email, WhatsApp leads and more
+- Works with the systems the company already uses
+- Dedicated support
+A quote is given once FadeFlow understands the company's needs.
+
+## 7. Clients
+
+FadeFlow works with businesses in the UAE and India including Moving Line, Route Star, Cool Life Technical Services L.L.C and Al Rawda Technical Services, plus others that cannot be named publicly.
+
+## 8. Frequently asked questions
+
+### What does FadeFlow do?
+FadeFlow reduces manual work for small and medium businesses in the UAE and India. We offer FadeLogistics, workflow software for transport and logistics companies, and custom AI workflow automation that handles repetitive tasks like invoicing, email filtering, WhatsApp lead qualifying and daily reports.
+
+### What is FadeLogistics?
+FadeLogistics is FadeFlow’s workflow management software for transport and logistics companies. It brings job cards, status tracking, customers, suppliers, agents and trip expenses into one place. [See all features](https://fadeflow.in/fadelogistics.html).
+
+### Do I need to replace my current software to use AI automation?
+No. We study how your team already works and build the AI automation around your existing tools — email, WhatsApp, spreadsheets and the software you use today. Nothing needs to be replaced.
+
+### Which AI does FadeFlow use?
+We build our automations with Claude AI by Anthropic, configured around your business rules, templates and data.
+
+### Where does FadeFlow work?
+FadeFlow serves small and medium businesses across the United Arab Emirates and India. Founded in 2023, our team works directly with each client.
+
+### How much does FadeFlow cost?
+FadeLogistics starts from AED 125 per month (AED 1,499 per company per year). Custom packages are quoted after we understand your workflow. [See pricing](https://fadeflow.in/pricing.html).
+
+### Who is FadeLogistics for?
+Transport and logistics companies in the UAE and India that manage jobs, customers, suppliers and agents — especially teams currently running operations on Excel sheets and WhatsApp groups.
+
+### How do I log in to FadeLogistics?
+FadeLogistics runs in your browser at [application.fadelogistics.fadeflow.in](https://application.fadelogistics.fadeflow.in/). There is nothing to install.
+
+### Is training included?
+Yes. Full team training, workflow consulting, maintenance, updates and direct support are included in the first year of the Starter package.
+
+### Can I add AI automation later?
+Yes. When you’re ready, our custom package adds AI automation for invoices, follow-ups, reports and more on top of FadeLogistics. [Learn about AI automation](https://fadeflow.in/ai-automation.html).
+
+### Is my data safe?
+Your business data stays yours — we never sell or share it. Data is stored using industry-standard practices including encryption in transit and at rest. Read our [privacy policy](https://fadeflow.in/legal.html#privacy).
+
+### What tasks can FadeFlow automate with AI?
+Common examples are invoice generation, business analytics in plain language, email filtering, WhatsApp lead qualifying, document data extraction, quotation drafting, customer reply drafting, payment follow-ups and daily summaries. If a task is repetitive and follows rules, it can usually be automated.
+
+### Do we have to change our software or systems?
+No. Our approach is to automate your current workflow without changing the systems you already use. Your team keeps working in the same tools.
+
+### Which AI model do you use?
+We build on Claude AI by Anthropic, set up with your business rules, templates, tone of voice and data.
+
+### Will the AI send things without our approval?
+You decide. Tasks can run fully automatically, or the AI can prepare drafts — replies, quotations, invoices — for your team to review and send.
+
+### How is AI automation priced?
+AI automation is part of our custom package. We first study your workflow, then give you a quote that fits the work being automated. [See pricing](https://fadeflow.in/pricing.html).
+
+### How do we get started?
+Book a demo or email [sales@fadeflow.in](mailto:sales@fadeflow.in). We’ll learn how your team works, identify the repetitive tasks and show you what can be automated first.
+
+### What is included in the Starter package?
+All FadeLogistics features — job cards, status tracking, customers, suppliers, agents and expenses — with unlimited job cards, customers, suppliers and agents. Full team training, workflow consulting, maintenance, updates and direct support are included in the first year.
+
+### How is the Custom package priced?
+We study your current workflow and repetitive tasks first. Once we understand what needs to be built and automated, we send a quote that fits your business.
+
+### Is the price per user?
+The Starter price is per company, per year.
+
+### Can I see FadeLogistics before buying?
+Yes. [Book a demo](https://fadeflow.in/contact.html) and we’ll walk you through the full workflow for your business.
+
+### Which currency are prices in?
+Prices are shown in UAE dirhams (AED). For anything else, email [sales@fadeflow.in](mailto:sales@fadeflow.in).
+
+## 9. Data, privacy and policies
+
+- Customer business data remains owned by the customer. FadeFlow does not sell, share or monetise business data.
+- Data is stored using industry-standard practices including encryption in transit and at rest.
+- Users can request account deletion and data removal at any time via tech@fadeflow.in; requests are processed within 30 days.
+- Full policies: https://fadeflow.in/legal.html (privacy policy, terms of service, cookie policy).
+
+## 10. Blog articles
+
+- [How SMEs Can Automate Invoicing with AI (Without New Software)](https://fadeflow.in/blog/ai-invoice-automation-for-smes.html) (AI Automation): How UAE and India SMEs can use AI to create invoices from job cards, timesheets and delivery notes, and chase payments, using the tools they already have.
+- [WhatsApp Lead Qualification with AI: A Practical Guide for SMEs](https://fadeflow.in/blog/whatsapp-lead-qualification-with-ai.html) (Sales): Most SME enquiries in the UAE and India arrive on WhatsApp. How AI can reply instantly, qualify leads and pass only serious buyers to your sales team.
+- [Logistics Job Cards: Why Excel Breaks and What to Use Instead](https://fadeflow.in/blog/logistics-job-cards-excel-vs-software.html) (Logistics): Running logistics jobs on Excel and WhatsApp works until it doesn't. Where spreadsheets fail, and what a job card system like FadeLogistics changes.
+- [9 Repetitive Tasks Every SME Can Automate with AI](https://fadeflow.in/blog/repetitive-tasks-smes-can-automate.html) (AI Automation): From invoices and quotations to WhatsApp enquiries and daily reports: nine everyday tasks small and medium businesses in the UAE and India can hand to AI first.
+- [AI Automation Without Replacing Your Systems: How It Works](https://fadeflow.in/blog/ai-automation-without-replacing-systems.html) (Strategy): You don't need new software to benefit from AI. How FadeFlow automates work around the email, WhatsApp, spreadsheets and apps your team already uses.
+
+## 11. Mission and vision
+
+- **Mission:** Give SMEs back the hours lost to manual work. FadeFlow helps small and medium businesses automate repetitive work with practical software and AI, so their teams can focus on customers and growth instead of paperwork.
+- **Vision:** Every SME running on automated workflows. Automation should be within reach of every growing business in the UAE and India, not just large enterprises; it should fit the tools they already use and be priced for the size they are.

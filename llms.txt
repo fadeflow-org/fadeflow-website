@@ -1,0 +1,37 @@
+# FadeFlow
+
+> FadeFlow is a company founded in 2023 that builds AI products and custom AI workflow automation to reduce manual work for small and medium businesses (SMEs) in the United Arab Emirates (UAE) and India. Its product, FadeLogistics, is web-based workflow and job card software for transport and logistics companies. Its service, AI Workflow Automation, uses Claude AI to automate repetitive tasks such as invoicing, WhatsApp lead qualifying and email filtering without replacing a company's existing systems.
+
+Key facts:
+- Name: FadeFlow (website: https://fadeflow.in)
+- Founded: 2023
+- Markets: United Arab Emirates and India
+- Customers: small and medium businesses (SMEs)
+- Product: FadeLogistics, from AED 125 per month / AED 1,499 per company per year (app: https://application.fadelogistics.fadeflow.in/)
+- Service: AI Workflow Automation (custom quote), built with Claude AI by Anthropic
+- Founder: Sayed Adinan
+- Contact: sales@fadeflow.in (sales, demos, quotes), tech@fadeflow.in (technical support, privacy), +971 56 581 4649 (phone/WhatsApp)
+- Tagline: "Less manual work. More flow."
+
+## Main pages
+
+- [Home](https://fadeflow.in/): Overview of FadeFlow, FadeLogistics, AI automation use cases, clients and FAQ
+- [FadeLogistics](https://fadeflow.in/fadelogistics.html): Logistics workflow software with job cards, status tracking, customers, suppliers, agents and trip expenses
+- [AI Workflow Automation](https://fadeflow.in/ai-automation.html): How FadeFlow learns and automates repetitive tasks with Claude AI, with nine use cases
+- [Pricing](https://fadeflow.in/pricing.html): FadeLogistics Starter from AED 125/month (AED 1,499/year) and the Custom package by quote
+- [About](https://fadeflow.in/about.html): Company story, mission, vision and team
+- [Contact](https://fadeflow.in/contact.html): Sales, support, demo booking and contact details
+
+## Blog
+
+- [How SMEs Can Automate Invoicing with AI (Without New Software)](https://fadeflow.in/blog/ai-invoice-automation-for-smes.html): How UAE and India SMEs can use AI to create invoices from job cards, timesheets and delivery notes, and chase payments, using the tools they already have.
+- [WhatsApp Lead Qualification with AI: A Practical Guide for SMEs](https://fadeflow.in/blog/whatsapp-lead-qualification-with-ai.html): Most SME enquiries in the UAE and India arrive on WhatsApp. How AI can reply instantly, qualify leads and pass only serious buyers to your sales team.
+- [Logistics Job Cards: Why Excel Breaks and What to Use Instead](https://fadeflow.in/blog/logistics-job-cards-excel-vs-software.html): Running logistics jobs on Excel and WhatsApp works until it doesn't. Where spreadsheets fail, and what a job card system like FadeLogistics changes.
+- [9 Repetitive Tasks Every SME Can Automate with AI](https://fadeflow.in/blog/repetitive-tasks-smes-can-automate.html): From invoices and quotations to WhatsApp enquiries and daily reports: nine everyday tasks small and medium businesses in the UAE and India can hand to AI first.
+- [AI Automation Without Replacing Your Systems: How It Works](https://fadeflow.in/blog/ai-automation-without-replacing-systems.html): You don't need new software to benefit from AI. How FadeFlow automates work around the email, WhatsApp, spreadsheets and apps your team already uses.
+
+## Optional
+
+- [Full detailed information for LLMs](https://fadeflow.in/llms-full.txt): Complete facts, features, pricing, FAQs and policies in one file
+- [Legal](https://fadeflow.in/legal.html): Privacy policy, terms of service and cookie policy
+- [Sitemap](https://fadeflow.in/sitemap.xml)
