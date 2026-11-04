@@ -213,12 +213,93 @@ if (chaos && board) {
 const browser = document.getElementById('browser');
 if (browser && !reduceMotion) {
   const tilt = () => {
+    // Flat on tablets and phones; the 3D tilt only works with the side-by-side layout
+    if (innerWidth <= 1080) { browser.style.transform = ''; return; }
     const r = browser.getBoundingClientRect();
     const t = clamp(1 - (r.top + r.height / 2 - innerHeight / 2) / innerHeight, 0, 1);
     browser.style.transform = `rotateY(${lerp(-22, -4, t)}deg) rotateX(${lerp(14, 2, t)}deg)`;
   };
   window.addEventListener('scroll', tilt, { passive: true });
   tilt();
+}
+
+// ---- Copy buttons (free resources) ----
+const copyText = async text => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    // Fallback for browsers/contexts without the async clipboard API
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+    document.body.append(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch {}
+    ta.remove();
+    return ok;
+  }
+};
+document.querySelectorAll('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const src = document.getElementById(btn.dataset.copy);
+    if (!src) return;
+    const ok = await copyText(src.textContent.trim());
+    const label = btn.querySelector('.copy-label') || btn;
+    if (!label.dataset.text) label.dataset.text = label.textContent;
+    label.textContent = ok ? 'Copied ✓' : 'Select & copy';
+    btn.classList.toggle('is-copied', ok);
+    if (!ok) {
+      const range = document.createRange();
+      range.selectNodeContents(src);
+      getSelection().removeAllRanges();
+      getSelection().addRange(range);
+    }
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => {
+      label.textContent = label.dataset.text;
+      btn.classList.remove('is-copied');
+    }, 2000);
+  });
+});
+
+// ---- Prompt library: search + category filter ----
+const lookSearch = document.getElementById('look-search');
+if (lookSearch) {
+  const cards = [...document.querySelectorAll('.look-card')];
+  const groups = [...document.querySelectorAll('.look-group')];
+  const chips = [...document.querySelectorAll('.lib-chip')];
+  const count = document.getElementById('look-count');
+  const empty = document.getElementById('look-empty');
+  let cat = 'all';
+  const apply = () => {
+    const q = lookSearch.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach(c => {
+      const ok = (cat === 'all' || c.dataset.cat === cat) && (!q || c.dataset.text.includes(q));
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    groups.forEach(g => { g.hidden = !g.querySelector('.look-card:not([hidden])'); });
+    count.textContent = `${shown} of ${cards.length} looks`;
+    empty.hidden = shown > 0;
+  };
+  const reset = () => {
+    lookSearch.value = '';
+    cat = 'all';
+    chips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+    apply();
+  };
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    cat = chip.dataset.filter;
+    chips.forEach(c => c.classList.toggle('active', c === chip));
+    apply();
+  }));
+  lookSearch.addEventListener('input', apply);
+  document.getElementById('look-reset').addEventListener('click', reset);
+  document.getElementById('look-reset-2').addEventListener('click', reset);
 }
 
 // ---- "Built for ___" word rotator ----

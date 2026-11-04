@@ -42,7 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; }
 ul, ol { list-style: none; }
@@ -635,8 +635,9 @@ body::before {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .feed { max-width: 520px; transform: rotate(1deg); }
   .offer-logi { grid-template-columns: 1fr; }
-  .offer-shot { padding: 0 0 48px 32px; }
-  .browser { width: 120%; }
+  .offer-shot { padding: 0 40px 44px; perspective: none; }
+  .browser { width: 100%; transform: none !important; border-radius: 12px; }
+  .offer-glow { right: auto; left: 50%; top: auto; bottom: 0; transform: translateX(-50%); }
 }
 
 @media (max-width: 900px) {
@@ -697,7 +698,9 @@ body::before {
   .hero-meta { gap: 24px; margin-top: 48px; }
   .feed-sticker { left: -6px; }
   .offer-body, .offer-ai { padding: 34px 24px; }
-  .offer-shot { padding: 0 0 34px 24px; }
+  .offer-shot { padding: 0 16px 20px; }
+  .browser-bar { padding: 8px 10px; }
+  .browser-bar span { font-size: .6rem; padding: 3px 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
   .who-grid { grid-template-columns: 1fr; }
   .post-grid { grid-template-columns: 1fr; }
   .post-card.featured { grid-column: auto; }

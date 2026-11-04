@@ -74,6 +74,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fadeflow.in/resources/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fadeflow.in/resources/profile-roast-prompt.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fadeflow.in/resources/chatgpt-scheduled-tasks.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fadeflow.in/resources/ai-profile-photo-prompts.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fadeflow.in/experiments/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fadeflow.in/legal.html</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>yearly</changefreq>

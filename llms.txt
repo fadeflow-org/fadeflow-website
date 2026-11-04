@@ -30,6 +30,14 @@ Key facts:
 - [9 Repetitive Tasks Every SME Can Automate with AI](https://fadeflow.in/blog/repetitive-tasks-smes-can-automate.html): From invoices and quotations to WhatsApp enquiries and daily reports: nine everyday tasks small and medium businesses in the UAE and India can hand to AI first.
 - [AI Automation Without Replacing Your Systems: How It Works](https://fadeflow.in/blog/ai-automation-without-replacing-systems.html): You don't need new software to benefit from AI. How FadeFlow automates work around the email, WhatsApp, spreadsheets and apps your team already uses.
 
+## Free AI resources (time.fade)
+
+- [Free AI resources hub](https://fadeflow.in/resources/): Free, copy-ready AI prompts and guides from @time.fade, FadeFlow's Instagram
+- [Roast my profile, then fix it](https://fadeflow.in/resources/profile-roast-prompt.html): Copy a free AI prompt that reviews a screenshot of your LinkedIn or Instagram profile, ranks the top 5 fixes and writes a ready-to-paste bio or headline.
+- [Give ChatGPT a task to do later](https://fadeflow.in/resources/chatgpt-scheduled-tasks.html): Give ChatGPT a task to do later. A 5-step guide and copy-ready setup prompt to schedule research, summaries, reminders and checklists in ChatGPT.
+- [Make a profile photo with AI](https://fadeflow.in/resources/ai-profile-photo-prompts.html): Make a LinkedIn, Instagram or WhatsApp profile photo with AI. Upload two selfies, pick one of 50 looks and copy a complete ChatGPT prompt.
+- [time.fade experiments center](https://fadeflow.in/experiments/): Where FadeFlow tests AI on everyday problems in public before turning them into free guides
+
 ## Optional
 
 - [Full detailed information for LLMs](https://fadeflow.in/llms-full.txt): Complete facts, features, pricing, FAQs and policies in one file
