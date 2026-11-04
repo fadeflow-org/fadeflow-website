@@ -18,6 +18,10 @@ TOOLS = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, TOOLS)
 from resources_data import RESOURCES, LOOKS, PHOTO_CATEGORIES, EXPERIMENTS, photo_prompt
 
+# Unlisted resources get a page (shared by direct link only): no hub card,
+# no sitemap/llms entry, and noindex.
+LISTED = [r for r in RESOURCES if not r.get("unlisted")]
+
 R = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(TOOLS)
 SITE = "https://fadeflow.in"
 DATE = "2026-11-03"
@@ -1092,7 +1096,7 @@ for r in RESOURCES:
 {credit(P)}
       </div>
     </section>'''
-    w(f"resources/{r['slug']}.html", page(head(r["seo"], r["desc"], path, P, crumbs=crumbs, nodes=nodes), P, "resources", body, resource_cta(P)))
+    w(f"resources/{r['slug']}.html", page(head(r["seo"], r["desc"], path, P, crumbs=crumbs, nodes=nodes, noindex=r.get("unlisted", False)), P, "resources", body, resource_cta(P)))
 
 def res_card(r, P):
     return f'''          <a href="{P}{r["slug"]}.html" class="post-card reveal">
@@ -1108,8 +1112,8 @@ title = "Free AI Resources & Prompts by time.fade | FadeFlow"
 desc = "Free, copy-ready AI prompts and step-by-step guides from @time.fade: profile roasts, ChatGPT scheduled tasks, AI profile photos and more. No sign-up."
 crumbs = [("Home", "/"), ("Free AI resources", path)]
 hub_nodes = [{"@type": "ItemList", "@id": SITE + path + "#list", "name": "Free AI resources", "itemListElement": [
-    {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/resources/{r['slug']}.html", "name": r["card_title"]} for i, r in enumerate(RESOURCES)]}]
-cards = "\n".join(res_card(r, "") for r in RESOURCES)
+    {"@type": "ListItem", "position": i + 1, "url": f"{SITE}/resources/{r['slug']}.html", "name": r["card_title"]} for i, r in enumerate(LISTED)]}]
+cards = "\n".join(res_card(r, "") for r in LISTED)
 body = f'''    <section class="page-hero">
       <div class="container">
         {crumbs_html(P, crumbs)}
@@ -1123,7 +1127,7 @@ body = f'''    <section class="page-hero">
     <section class="page-content">
       <div class="container">
         <div class="block" id="all">
-{block_head("All resources", f"{len(RESOURCES)} free [tools] so far.", "New guides are added after each experiment on @time.fade.")}
+{block_head("All resources", f"{len(LISTED)} free [tools] so far.", "New guides are added after each experiment on @time.fade.")}
           <div class="post-grid">
 {cards}
           </div>
@@ -1285,7 +1289,7 @@ w("legal.html", s)
 pages = [("/", "1.0", "weekly"), ("/fadelogistics.html", "0.9", "monthly"), ("/ai-automation.html", "0.9", "monthly"),
          ("/pricing.html", "0.9", "monthly"), ("/about.html", "0.7", "monthly"), ("/contact.html", "0.7", "yearly"),
          ("/blog/", "0.8", "weekly")] + [(f"/blog/{p['slug']}.html", "0.7", "monthly") for p in POSTS] + \
-        [("/resources/", "0.8", "weekly")] + [(f"/resources/{r['slug']}.html", "0.7", "monthly") for r in RESOURCES] + \
+        [("/resources/", "0.8", "weekly")] + [(f"/resources/{r['slug']}.html", "0.7", "monthly") for r in LISTED] + \
         [("/experiments/", "0.6", "monthly"), ("/legal.html", "0.3", "yearly")]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
 for u, pr, cf in pages:
@@ -1414,7 +1418,7 @@ Key facts:
 ## Free AI resources (time.fade)
 
 - [Free AI resources hub]({SITE}/resources/): Free, copy-ready AI prompts and guides from @time.fade, FadeFlow's Instagram
-{chr(10).join(f"- [{r['card_title']}]({SITE}/resources/{r['slug']}.html): {r['desc']}" for r in RESOURCES)}
+{chr(10).join(f"- [{r['card_title']}]({SITE}/resources/{r['slug']}.html): {r['desc']}" for r in LISTED)}
 - [time.fade experiments center]({SITE}/experiments/): Where FadeFlow tests AI on everyday problems in public before turning them into free guides
 
 ## Optional
@@ -1536,7 +1540,7 @@ FadeFlow works with businesses in the UAE and India including Moving Line, Route
 
 time.fade (Instagram @time.fade, {INSTA}) is FadeFlow's experiments center: it tests AI on real everyday problems in public and turns what works into free, copy-ready guides at {SITE}/resources/ (no sign-up).
 
-{chr(10).join(f"- [{r['card_title']}]({SITE}/resources/{r['slug']}.html) ({r['tag']}, {r['meta']}): {r['desc']}" for r in RESOURCES)}
+{chr(10).join(f"- [{r['card_title']}]({SITE}/resources/{r['slug']}.html) ({r['tag']}, {r['meta']}): {r['desc']}" for r in LISTED)}
 
 ## 12. Mission and vision
 

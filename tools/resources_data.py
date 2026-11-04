@@ -251,6 +251,61 @@ RESOURCES = [
     ),
 ]
 
+FLIGHT_TRACKER_PROMPT = """--- ✈️ YOUR TRIP SETUP (EDIT THESE) ---
+• FROM & TO: Dubai (DXB) to Kozhikode (CCJ)
+• DATE WINDOW: Dec 1 to Jan 31
+• MAX BUDGET: Under AED 600
+• DAILY ALERT TIME: 8:00 AM  (Optional: leave blank or delete if you want an instant one-time check)
+---------------------------------------
+
+Use Google Flights to search for flights matching my FROM & TO route and DATE WINDOW above.
+
+If DAILY ALERT TIME is provided, schedule this action to run automatically every day at that exact time and send me a mobile push notification. If no time is provided, run the check right now.
+
+Requirements:
+1. Prioritize non-stop / direct flights under my MAX BUDGET.
+2. If no flights meet the budget, find the absolute cheapest available direct dates across the entire window.
+3. For every match, list:
+   - Travel Date & Day
+   - Airline & Flight Timings
+   - Exact Ticket Price
+   - Direct Google Flights booking link"""
+
+# Shared by direct link only (DMs). Not on the hub, sitemap or llms files; noindex.
+RESOURCES.append(dict(
+    slug="gemini-flight-tracker",
+    unlisted=True,
+    tag="Prompt",
+    card_title="Automated flight deal tracker",
+    card_desc="Set your route, dates and budget once. Gemini checks Google Flights and sends you the cheapest direct flights.",
+    meta="1 prompt · Google Gemini",
+    seo="Automated Flight Deal Tracker Prompt for Gemini | time.fade",
+    desc="Copy a Google Gemini prompt that checks Google Flights for your route, dates and budget, daily or right now, and lists the cheapest direct flights with booking links.",
+    kicker="time.fade / Resources · Flight deal tracker",
+    title="Track cheap flights with [Gemini].",
+    sub="Set your route, dates and budget once. Gemini searches Google Flights and sends you the best direct deals, every day or right now.",
+    hero_cta=("Copy the prompt", "#prompt"),
+    hero_note="Here is the exact automated flight tracker setup for Google Gemini.",
+    sections=[
+        ("steps", dict(label="01 / How to set it up", title="Four steps. Daily deal alerts.",
+            sub="Edit the top four lines, then send.",
+            steps=[("Open Gemini", "Open the Google Gemini app on your phone (iOS or Android) or go to gemini.google.com in your browser."),
+                   ("Customize your trip details", "Copy the prompt below and edit the top 4 lines: FROM & TO, DATE WINDOW, MAX BUDGET and DAILY ALERT TIME."),
+                   ("Hit send", "Gemini will confirm your schedule (e.g., “Scheduled daily at 8:00 AM”)."),
+                   ("Receive your daily deal alert", "Every morning at your chosen time, Gemini scans Google Flights in the background and sends a push notification to your phone lock screen showing the lowest prices and direct links to book!")],
+            note="Pro tip: you can view, pause, or cancel your active trackers anytime inside the Gemini app by tapping the left menu and selecting Scheduled.")),
+        ("prompt", dict(label="02 / Copy & paste", title="Your flight tracker prompt",
+            sub="Copy it all, edit the trip setup at the top, then send it to Gemini.",
+            id="prompt", heading="Your trip setup + prompt", text=FLIGHT_TRACKER_PROMPT,
+            after="Scheduled actions, alert times and notifications depend on your Gemini app, plan and region. Prices come from Google Flights at the time of each check, so always confirm the fare on the booking page.")),
+        ("bullets", dict(label="03 / Edit these", title="Your top four lines.", sub="",
+            items=[("FROM & TO", "Your departure and arrival airport codes or cities (e.g., Abu Dhabi to Kochi, Dubai to Mumbai)."),
+                   ("DATE WINDOW", "The range of dates you are willing to fly (e.g., Nov 15 to Dec 20, or specific dates)."),
+                   ("MAX BUDGET", "Your ideal maximum price (e.g., Under AED 500)."),
+                   ("DAILY ALERT TIME", "For a daily notification on your lock screen, put your preferred time (e.g., 8:00 AM, 7:30 PM). For an instant one-time scan, leave this line blank or delete it!")])),
+    ],
+))
+
 EXPERIMENTS = [
     dict(n="01", title="The AED 50 fine", status="Shipped as a guide",
          text="I fined myself AED 50 for every missed daily video. Instead of relying on willpower, I scheduled ChatGPT to research content ideas for me every day.",
