@@ -186,6 +186,8 @@ time.fade (Instagram @time.fade, https://www.instagram.com/time.fade) is FadeFlo
 - [Roast my profile, then fix it](https://fadeflow.in/resources/profile-roast-prompt.html) (Prompt, 1 prompt · Instagram & LinkedIn): Copy a free AI prompt that reviews a screenshot of your LinkedIn or Instagram profile, ranks the top 5 fixes and writes a ready-to-paste bio or headline.
 - [Give ChatGPT a task to do later](https://fadeflow.in/resources/chatgpt-scheduled-tasks.html) (Guide, 5 steps · 1 setup prompt): Give ChatGPT a task to do later. A 5-step guide and copy-ready setup prompt to schedule research, summaries, reminders and checklists in ChatGPT.
 - [Make a profile photo with AI](https://fadeflow.in/resources/ai-profile-photo-prompts.html) (Prompt library, 50 prompts · Vol. 01): Make a LinkedIn, Instagram or WhatsApp profile photo with AI. Upload two selfies, pick one of 50 looks and copy a complete ChatGPT prompt.
+- [Find the cheapest grocery basket](https://fadeflow.in/resources/grocery-price-checker.html) (Prompt, 1 prompt · ChatGPT with web search): Compare grocery prices across supermarkets with AI. Copy a prompt that checks current prices and offers, compares full baskets and recommends the cheapest place to shop.
+- [4 ChatGPT codes for any book](https://fadeflow.in/resources/chatgpt-book-codes.html) (Guide, 40 codes · 1 setup prompt): Paste one prompt into ChatGPT, attach a book and type /visualnotes, /mentalmodels, /chaptermap or /themes. Includes 40 book codes for notes, study, quotes and book clubs.
 
 ## 12. Mission and vision
 

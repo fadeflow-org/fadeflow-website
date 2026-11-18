@@ -273,6 +273,7 @@ if (lookSearch) {
   const chips = [...document.querySelectorAll('.lib-chip')];
   const count = document.getElementById('look-count');
   const empty = document.getElementById('look-empty');
+  const noun = count.dataset.noun || 'looks';
   let cat = 'all';
   const apply = () => {
     const q = lookSearch.value.trim().toLowerCase();
@@ -283,7 +284,7 @@ if (lookSearch) {
       if (ok) shown++;
     });
     groups.forEach(g => { g.hidden = !g.querySelector('.look-card:not([hidden])'); });
-    count.textContent = `${shown} of ${cards.length} looks`;
+    count.textContent = `${shown} of ${cards.length} ${noun}`;
     empty.hidden = shown > 0;
   };
   const reset = () => {

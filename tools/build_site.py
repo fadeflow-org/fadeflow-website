@@ -1025,14 +1025,51 @@ def r_library(d):
           <div class="lib-tools reveal">
             <label class="lib-search"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input id="look-search" type="search" placeholder="Search titles, e.g. studio or LinkedIn" aria-label="Search looks" autocomplete="off" /></label>
             <div class="lib-chips">{chips}</div>
-            <div class="lib-count"><span id="look-count">{len(LOOKS)} of {len(LOOKS)} looks</span><button type="button" id="look-reset">Reset filters &#8634;</button></div>
+            <div class="lib-count"><span id="look-count" data-noun="looks">{len(LOOKS)} of {len(LOOKS)} looks</span><button type="button" id="look-reset">Reset filters &#8634;</button></div>
           </div>
 {chr(10).join(groups)}
           <p class="lib-empty" id="look-empty" hidden>No looks match that search. <button type="button" class="link-u" id="look-reset-2">Reset filters</button></p>
         </div>'''
 
+def r_codes(d):
+    chips = '<button type="button" class="lib-chip active" data-filter="all">All</button>' + "".join(
+        f'<button type="button" class="lib-chip" data-filter="{k}">{esc(n)}</button>' for k, n, _ in d["groups"])
+    groups = []
+    n = 0
+    for key, name, items in d["groups"]:
+        cards = []
+        for code, desc in items:
+            n += 1
+            cid = f"code-{n:02d}"
+            text = f"{code} {desc} {name}".lower()
+            cards.append(f'''              <article class="look-card" data-cat="{key}" data-text="{esc(text)}">
+                <div class="look-top"><span class="look-n">{n:02d}</span><span class="look-best">{esc(name)}</span></div>
+                <h3>{esc(code)}</h3>
+                <p>{esc(desc)}</p>
+                <pre id="{cid}" hidden>{esc(code)}</pre>
+                {copy_btn(cid, "Copy code", " light")}
+              </article>''')
+        first, last = n - len(items) + 1, n
+        groups.append(f'''          <section class="look-group" data-group="{key}">
+             <div class="look-group-head"><h3>{esc(name)}</h3><span>{first:02d}&mdash;{last:02d}</span></div>
+             <div class="look-grid">
+{chr(10).join(cards)}
+             </div>
+           </section>''')
+    noun = d.get("noun", "codes")
+    return f'''        <div class="block" id="codes">
+ {block_head(d["label"], d["title"], d.get("sub", ""))}
+           <div class="lib-tools reveal">
+             <label class="lib-search"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input id="look-search" type="search" placeholder="{esc(d.get("search_placeholder", "Search codes"))}" aria-label="Search codes" autocomplete="off" /></label>
+             <div class="lib-chips">{chips}</div>
+             <div class="lib-count"><span id="look-count" data-noun="{esc(noun)}">{n} of {n} {noun}</span><button type="button" id="look-reset">Reset filters &#8634;</button></div>
+           </div>
+ {chr(10).join(groups)}
+           <p class="lib-empty" id="look-empty" hidden>No codes match that search. <button type="button" class="link-u" id="look-reset-2">Reset filters</button></p>
+         </div>'''
+
 RENDER = {"story": r_story, "steps": r_steps, "prompt": r_prompt, "examples": r_examples, "faq": r_faq,
-          "bullets": r_bullets, "photo_input": r_photo_input, "library": r_library}
+          "bullets": r_bullets, "photo_input": r_photo_input, "library": r_library, "codes": r_codes}
 
 def credit(P):
     return f'''        <div class="res-credit reveal">

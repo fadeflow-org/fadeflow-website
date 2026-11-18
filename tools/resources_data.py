@@ -15,6 +15,7 @@ Plain text everywhere (it is escaped when rendered). Section types:
   ("bullets",  {label, title, sub, items: [(title, text)]})
   ("photo_input", {label, title, text})
   ("library",  {label, title, sub})      # renders LOOKS
+  ("codes",    {label, title, sub, groups, search_placeholder, noun})  # renders BOOK_CODE_GROUPS
 """
 
 PROFILE_ROAST_PROMPT = """Act as a sharp but fair profile reviewer. I’ll upload a screenshot of my Instagram or LinkedIn profile.
@@ -143,6 +144,157 @@ LOOKS = [
     ("platform", "Instagram", "Newsletter author image", "Warm, approachable chest-up portrait with neutral shirt and soft studio background, square centre crop that works at small size."),
 ]
 
+GROCERY_PRICE_PROMPT = """I want to compare grocery prices across supermarkets and find the cheapest way to buy my shopping list.
+
+First, ask me only these two questions:
+
+1. What grocery items do you want to buy? Ask me to include quantities, sizes, and preferred brands if possible.
+2. Which city or area should I search in?
+
+After I answer, search the internet for current grocery prices and offers at supermarkets near that location.
+
+Check stores such as LuLu, Nesto, Carrefour, Sharjah Coop, and other available supermarkets.
+
+For each supermarket:
+- List every item and its price.
+- Mention whether it is an offer price or regular price.
+- Compare equivalent brands, sizes, and quantities.
+- Calculate the total cost of the complete shopping list.
+
+After comparing the stores, tell me which supermarket has the cheapest complete basket.
+
+Also check whether buying different items from different supermarkets would reduce the total cost. Consider extra travel or delivery costs before recommending that option.
+
+Important:
+- Use real, current prices from reliable sources.
+- Prefer official supermarket websites and current catalogues.
+- Include source links and the date prices were checked.
+- Never guess or invent prices, offers, or availability.
+- If a price cannot be verified, write "Price unavailable".
+- Clearly distinguish live website prices from catalogue prices.
+- Do not calculate missing prices as zero.
+- If some prices are unavailable, show a partial total and explain what is missing.
+
+Present the results in a simple comparison table and give me a clear recommendation."""
+
+BOOK_CODES_PROMPT = """I read books with codes. When my message starts with a code below, do exactly what it says. Codes aren't case sensitive. Use the book I attached or pasted in this chat, or the book I name after the code. If I add a chapter (like /visualnotes chapter 3), only do that part. I can stack codes, like /chaptermap /quotes. Work from the book's text when you have it, and never make up quotes or events. If I only gave a title, say once that attaching the book gets better results, then do your best. Codes that need my answers (like /quizme and /debate) keep going until I say stop. If I use a code that isn't on this list, work out what it means from its name. If I paste this into a chat, reply only: "Codes ready. Which book are we reading?"
+
+THE 4 FROM THE VIDEO
+/visualnotes: Turn the entire book into short visual notes I can scan in minutes: one block per big idea with a bold heading, an emoji icon, two or three short bullets and a simple diagram or table where it helps.
+/mentalmodels: Pull out the book's biggest ideas and turn them into a visual map of how they all connect: one line on each idea, then a diagram with arrows showing how they link.
+/chaptermap: Break the book down one chapter at a time: what happens or what's argued, the key point and how it links to the rest. End with a simple map of how it all fits together.
+/themes: Find every major theme running through the book: what it is, where it shows up (characters, events, examples) and what the book is really saying, so I get the deeper meaning.
+
+GET THE GIST
+/tldr: The whole book in five sentences.
+/onepager: The whole book on one page: the big idea, the key points and the best takeaways.
+/bigidea: The one idea the whole book is built on, in one sentence, then why it matters.
+/worthit: Ask what I want from it, then tell me honestly if it's worth my time and who should skip it.
+/skimguide: Which chapters to read closely, which to skim and which to skip, and why.
+/beforeyouread: What to know before I start: the author, when and why it was written, what to look out for. No spoilers.
+
+GO DEEPER
+/characters: Every main character: who they are, what they want and how they change.
+/timeline: Every key event in order, with the chapter it happens in.
+/symbols: The symbols and recurring images, and what each one stands for.
+/argument: The author's main argument, the evidence behind it and the weak spots.
+/keyterms: Every important term or idea in the book, in plain words.
+/simplify: Rewrite the passage I paste in plain, everyday words.
+/ending: What the ending really means, and the main ways people read it.
+/critique: The strongest criticisms of the book and where the author might be wrong.
+
+REMEMBER IT
+/quotes: The 10 best lines, word for word from the text, with the chapter and what each one means. If you don't have the text, say so instead of guessing.
+/flashcards: Flashcards of the key ideas. Run me through them one at a time.
+/recall: Ask me what I remember from the chapter first, then fill in what I missed.
+/sketchnote: Make one image: the book's big ideas as a hand-drawn sketchnote page I can save.
+/savenotes: Everything from this chat as clean notes I can paste into my notes app.
+
+USE IT
+/actionsteps: Turn the book into a short list of things to actually do, starting this week.
+/applytome: Ask me a few questions about my life and goals, then show how the book's ideas apply to me.
+/challenge: A 30-day challenge to put the book into practice, one small task a day.
+/examples: An everyday, real-life example of each big idea.
+/asktheauthor: Answer my questions the way the author would, based only on the book. Say when it doesn't cover something.
+/advice: I'll bring a real problem. Give me advice using only this book's ideas.
+
+STUDY IT
+/quizme: Quiz me one question at a time. Tell me if I'm right and why, and keep score.
+/studyguide: A full study guide: summary, characters or key ideas, themes, quotes and likely test questions.
+/essayideas: Five essay topics, each with a thesis and the evidence from the book to back it up.
+/vocab: The hard words from the chapter, with simple meanings and an example sentence.
+/sofar: Recap everything up to the chapter I name. No spoilers past it.
+
+BOOK CLUB AND BEYOND
+/bookclub: Ten discussion questions for a book club, from easy to deep.
+/debate: Argue the opposite side of the book's main idea with me, one point at a time.
+/compare: Compare it to another book I name: where they agree, where they clash and which to read first.
+/readnext: Five real books to read next based on this one, and why each fits.
+
+FOR KIDS
+/kidsversion: Retell it for a kid of the age I give, in simple words, keeping the big lessons.
+/kidsquestions: Questions to ask my kid as we read it together, chapter by chapter."""
+
+# (group key, group name, [(code, what it does)])
+BOOK_CODE_GROUPS = [
+    ("video", "From the video", [
+        ("/visualnotes", "Turn the whole book into short visual notes: one block per big idea with a heading, an icon, two or three bullets and a simple diagram."),
+        ("/mentalmodels", "Turn the biggest ideas into a visual map, with arrows showing how they connect."),
+        ("/chaptermap", "Go chapter by chapter: what happens or is argued, the key point, and how it links to the rest."),
+        ("/themes", "Find the major themes, where they show up and what the book is really saying."),
+    ]),
+    ("gist", "Get the gist", [
+        ("/tldr", "The whole book in five sentences."),
+        ("/onepager", "The big idea, key points and best takeaways on one page."),
+        ("/bigidea", "The one idea the whole book is built on, and why it matters."),
+        ("/worthit", "Ask what you want, then say honestly if it's worth your time and who should skip it."),
+        ("/skimguide", "Which chapters to read closely, skim or skip, and why."),
+        ("/beforeyouread", "The author, when and why it was written, and what to look out for. No spoilers."),
+    ]),
+    ("deeper", "Go deeper", [
+        ("/characters", "Every main character: who they are, what they want and how they change."),
+        ("/timeline", "Every key event in order, with the chapter it happens in."),
+        ("/symbols", "Recurring symbols and images, and what each one stands for."),
+        ("/argument", "The main argument, the evidence behind it and the weak spots."),
+        ("/keyterms", "Every important term or idea in plain words."),
+        ("/simplify", "Rewrite a confusing passage in everyday language."),
+        ("/ending", "What the ending really means and the main ways people read it."),
+        ("/critique", "The strongest criticisms of the book and where the author might be wrong."),
+    ]),
+    ("remember", "Remember it", [
+        ("/quotes", "The 10 best lines word for word, with the chapter and what each one means. Needs the book's text."),
+        ("/flashcards", "Flashcards of the key ideas, run through one at a time."),
+        ("/recall", "Asks what you remember first, then fills in what you missed."),
+        ("/sketchnote", "One hand-drawn style image of the book's big ideas that you can save."),
+        ("/savenotes", "Everything from the chat as clean notes for your notes app."),
+    ]),
+    ("use", "Use it", [
+        ("/actionsteps", "A short list of things to do, starting this week."),
+        ("/applytome", "Asks about your life and goals, then applies the book's ideas to you."),
+        ("/challenge", "A 30-day challenge, with one small task each day."),
+        ("/examples", "An everyday, real-life example of each big idea."),
+        ("/asktheauthor", "Answers your questions the way the author would, based only on the book."),
+        ("/advice", "Bring a real problem and get advice using only this book's ideas."),
+    ]),
+    ("study", "Study it", [
+        ("/quizme", "One question at a time, with explanations, scoring and no stopping until you say so."),
+        ("/studyguide", "Summary, characters or key ideas, themes, quotes and likely test questions."),
+        ("/essayideas", "Five essay topics with a thesis and evidence from the book."),
+        ("/vocab", "Hard words from the chapter, with simple meanings and example sentences."),
+        ("/sofar", "A recap up to your current chapter, with no spoilers past it."),
+    ]),
+    ("club", "Book club & beyond", [
+        ("/bookclub", "Ten discussion questions, from easy to deep."),
+        ("/debate", "Argues the opposite side of the main idea, one point at a time."),
+        ("/compare", "Compares another book you name: where they agree, clash and which to read first."),
+        ("/readnext", "Five real books to read next based on this one, and why each fits."),
+    ]),
+    ("kids", "For kids", [
+        ("/kidsversion", "Retells the book for a kid of the age you give, keeping the big lessons."),
+        ("/kidsquestions", "Questions to ask your kid as you read together, chapter by chapter."),
+    ]),
+]
+
 RESOURCES = [
     dict(
         slug="profile-roast-prompt",
@@ -247,6 +399,105 @@ RESOURCES = [
             ("prompt", dict(label="03 / Make an adjustment", title="Fix the result.",
                 sub="Inspect the face, hands, clothes and crop. Replace [SPECIFIC ISSUE] with what needs fixing.",
                 id="correction", heading="Correction prompt", text=PHOTO_CORRECTION_PROMPT, after="")),
+        ],
+    ),
+    dict(
+        slug="grocery-price-checker",
+        tag="Prompt",
+        card_title="Find the cheapest grocery basket",
+        card_desc="One prompt compares your whole shopping list across supermarkets near you: live prices, offers, full-basket totals and travel costs.",
+        meta="1 prompt · ChatGPT with web search",
+        seo="AI Grocery Price Checker: Compare Supermarket Prices | FadeFlow",
+        desc="Compare grocery prices across supermarkets with AI. Copy a prompt that checks current prices and offers, compares full baskets and recommends the cheapest place to shop.",
+        kicker="time.fade / Resources · Everyday savings",
+        title="Cheaper groceries, [checked by AI].",
+        sub="One prompt compares your complete shopping list across supermarkets near you — offers, sizes, totals and travel costs included.",
+        hero_cta=("Copy the prompt", "#prompt"),
+        hero_note="Use ChatGPT with web search available. Results depend on which supermarket prices are published online.",
+        sections=[
+            ("steps", dict(label="01 / Get started", title="Five steps. One cheapest basket.",
+                sub="Copy the prompt, answer two questions, compare the results.",
+                steps=[("Open ChatGPT", "Start a new chat with web search available."),
+                       ("Copy and paste the prompt", "Copy the full prompt below, paste it into ChatGPT and send it."),
+                       ("Enter your grocery list", "Include quantities, sizes and preferred brands if you have them."),
+                       ("Enter your location", "Give a city or area, for example Rolla, Sharjah."),
+                       ("Compare the results", "ChatGPT searches for prices near you, compares the complete baskets and identifies the cheapest option.")],
+                note="Online prices may differ from in-store prices. Always verify the final price and stock with the supermarket before purchasing.")),
+            ("prompt", dict(label="02 / Copy & paste", title="Your grocery price checker",
+                sub="Copy it all. ChatGPT will ask for your items and your location first.",
+                id="prompt", heading="The complete prompt", text=GROCERY_PRICE_PROMPT,
+                after="The prompt asks for only two answers before it searches: your shopping list and your city or area.")),
+            ("examples", dict(label="03 / Try the example", title="Use this sample list.",
+                sub="Paste it when ChatGPT asks what you want to buy.",
+                items=["Onion — 1 kg", "Carrot — 1 kg", "Laundry detergent powder — 2 kg",
+                       "Cooking oil — 1 litre", "Whole chicken — 1 kg", "Location: Rolla, Sharjah"],
+                note="The point of the demo: compare the complete basket across supermarkets, instead of looking at individual discounts only.")),
+            ("bullets", dict(label="04 / What it checks", title="What the comparison includes.", sub="",
+                items=[("Every item, every store", "Lists each item and its price at each supermarket, marked as an offer or regular price."),
+                       ("Fair comparisons", "Matches equivalent brands, sizes and quantities before comparing."),
+                       ("Complete basket cost", "Calculates the total cost of the full shopping list at each store."),
+                       ("Cheapest complete basket", "Names the supermarket with the lowest total, not just the best-looking discount."),
+                       ("Mixed-store option", "Checks whether buying different items at different stores saves money after extra travel or delivery costs."),
+                       ("Verified sources", "Prefers official websites and current catalogues, with source links and the date checked."),
+                       ("Honest gaps", "Writes “Price unavailable” when a price cannot be verified, shows a partial total and never counts missing items as zero.")])),
+            ("faq", dict(label="05 / A little help", title="Before you go.",
+                sub="A few things to know about online grocery prices.",
+                items=[("Do I need ChatGPT with web search?", "Yes. The comparison uses internet search for current supermarket prices and offers. Without it, ChatGPT cannot check what is being sold near you right now."),
+                       ("Which supermarkets does it check?", "The prompt asks for LuLu, Nesto, Carrefour, Sharjah Coop and other available supermarkets near your location. What appears depends on which stores publish prices online for that area."),
+                       ("What if a price is unavailable?", "The prompt tells ChatGPT to write “Price unavailable”, show a partial total and explain what is missing. Missing prices are never treated as zero."),
+                       ("Are catalogue prices the same as live website prices?", "Not always. The prompt asks ChatGPT to clearly distinguish live website prices from catalogue prices and to include source links and the date each price was checked."),
+                       ("Can I use this outside Sharjah?", "Yes. Give any city or area when ChatGPT asks. Results depend on what that area’s supermarkets publish online."),
+                       ("Should I buy everything at the cheapest store?", "Not automatically. Check the mixed-store comparison too: a few dirhams saved can be lost on extra travel or delivery costs. The prompt asks for those costs before recommending a split basket.")])),
+        ],
+    ),
+    dict(
+        slug="chatgpt-book-codes",
+        tag="Guide",
+        card_title="4 ChatGPT codes for any book",
+        card_desc="Paste one setup prompt, attach a book and type /visualnotes, /mentalmodels, /chaptermap or /themes. Plus 36 more book codes for notes, study and book clubs.",
+        meta="40 codes · 1 setup prompt",
+        seo="40 ChatGPT Book Codes: /visualnotes, /mentalmodels & More | FadeFlow",
+        desc="Paste one prompt into ChatGPT, attach a book and type /visualnotes, /mentalmodels, /chaptermap or /themes. Includes 40 book codes for notes, study, quotes and book clubs.",
+        kicker="time.fade / Free guides · Read a book with codes",
+        title="Read any book with [codes].",
+        sub="One setup prompt teaches ChatGPT 40 shortcuts. Attach a book, type /visualnotes and get visual notes you can scan in minutes.",
+        hero_cta=("Copy the setup prompt", "#prompt"),
+        hero_note="Works in ChatGPT on any plan, including free. Web, desktop or the phone app.",
+        sections=[
+            ("steps", dict(label="01 / How it works", title="Three steps. Start with four codes.",
+                sub="Run them in the same chat, so ChatGPT already has the book every time.",
+                steps=[("Paste the setup prompt", "Open a new chat in ChatGPT, paste the prompt below and send it. It should reply “Codes ready. Which book are we reading?”"),
+                       ("Give ChatGPT the book", "Attach the PDF with + → Add photos & files, paste in a chapter, or just name a title. An attached book or pasted text works best; a title alone can be inaccurate and cannot produce exact quotes."),
+                       ("Type your first code", "Send /visualnotes, then /mentalmodels, /chaptermap and /themes in the same chat. Each code is a shortcut for a full instruction."),
+                       ("Zoom in or stack codes", "Use /visualnotes chapter 3 for one part, or /chaptermap /quotes to get two outputs at once."),
+                       ("Keep the codes in every chat", "A pasted setup prompt lasts for that chat only. For every new chat, paste it again or save it under Settings → Personalization → Custom instructions.")],
+                note="Codes are plain text shortcuts, not built-in ChatGPT commands. If a / menu pops up while typing, ignore it and keep typing.")),
+            ("prompt", dict(label="02 / Copy & paste", title="Teach ChatGPT every code",
+                sub="Copy it all into a new chat and send. Takes ten seconds.",
+                id="prompt", heading="The setup prompt", text=BOOK_CODES_PROMPT,
+                after="If the reply isn’t “Codes ready”, paste the prompt again at the top of the chat.")),
+            ("examples", dict(label="03 / The routine", title="Your four codes, in order.",
+                sub="This is the exact routine from the video. Do all four in one chat.",
+                items=["/visualnotes — short visual notes of the whole book, with headings, icons and simple diagrams.",
+                       "/mentalmodels — a visual map of the biggest ideas and how they connect.",
+                       "/chaptermap — every chapter, its key point and how it fits into the whole book.",
+                       "/themes — the major themes, where they appear and what they really mean."],
+                note="Want to keep it? /sketchnote makes one saveable image of the big ideas, and /savenotes gives you clean notes for your notes app.")),
+            ("codes", dict(label="04 / The full list", title="All 40 [codes].",
+                sub="Search or filter by group. Copy a code, then paste it into ChatGPT with your book.",
+                groups=BOOK_CODE_GROUPS, search_placeholder="Search codes, e.g. quotes or quizme", noun="codes")),
+            ("faq", dict(label="05 / Quick fixes", title="If a code [doesn’t] land.",
+                sub="The usual problems, and what to do.",
+                items=[("ChatGPT doesn’t know a code", "Paste the setup prompt at the top of the chat, or save it in your custom instructions so it is there every time."),
+                       ("The codes worked yesterday, but not in a new chat", "A pasted setup prompt only lasts for that chat. Save it under Settings → Personalization → Custom instructions."),
+                       ("A menu pops up when I type /", "Ignore it and keep typing. The code still works."),
+                       ("The notes are vague or skip chapters", "The book is probably too long for one go. Add the chapter after the code, like /visualnotes chapter 6, or give it one chapter at a time."),
+                       ("The file won’t upload", "Paste the text of a chapter instead, or split the PDF into smaller parts."),
+                       ("It’s getting details wrong", "It is probably working from the title alone. Attach the book or paste a chapter, and say “stick to the text.”"),
+                       ("/quotes won’t give exact quotes", "It needs the actual text. Attach the book or paste the chapter first."),
+                       ("I don’t want spoilers", "Use /sofar with the chapter you are on, or add “no spoilers past chapter 8” to any code."),
+                       ("The map comes out as a plain list", "Say “draw it as a diagram with arrows.”"),
+                       ("/quizme stops after one question", "Type /quizme again or say “keep going, one question at a time.”")])),
         ],
     ),
 ]
